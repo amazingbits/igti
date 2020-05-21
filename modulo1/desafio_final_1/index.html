@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Desafio Final</title>
+</head>
+<body>
+    <div class="loading">
+        <p>Carregando...</p>
+    </div>
+    <div class="container hide">
+
+        <h1>Pesquisa de Usuários</h1>
+
+        <div class="line"></div>
+
+        <div class="form-box">
+            <p>Busca</p>
+            <form id="form">
+                <input type="text" id="search" placeholder="Palavra a ser pesquisada" autofocus />
+                <input type="submit" id="btn" value="BUSCAR" disabled>
+            </form>
+        </div>
+
+        <div class="results">
+            <div class="res-div" id="resUser">
+                <p>Nenhum usuário encontrado</p>
+            </div>
+
+            <div class="res-div" id="resStatistics">
+                <p>Nada a ser exibido</p>
+            </div>
+        </div>
+    </div>
+    <script src="./js/script.js"></script>
+</body>
+</html>

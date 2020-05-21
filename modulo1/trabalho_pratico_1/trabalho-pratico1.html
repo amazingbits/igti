@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho Prático 1</title>
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            border:none;
+            box-sizing: border-box;
+            outline: none;
+        }
+        .container{
+            max-width: 350px;
+            position: absolute;
+            top:50%;
+            left:50%;
+            transform: translate3d(-50%,-50%,0);
+            background: #ccc;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        .container div{
+            display: grid;
+            grid-template-columns: 20% 60% 20%;
+            gap: 8px;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        .container p{
+            font-size: 11px;
+            color: #777;
+            text-transform: uppercase;
+        }
+        #color-box{
+            display: block;
+            width: 100%;
+            height: 50px;
+            background: #000;
+            border-radius: 10px;
+            margin-top: 25px;
+        }
+        input[type="text"]{
+            padding: 6px;
+            background: #b3b3b3;
+            border-radius: 4px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <p>Red (R)</p>
+            <input type="range" name="red" id="red" min="0" max="255" value="0">
+            <input type="text" name="red-box" id="red-box" value="0" readonly>
+        </div>
+        <div>
+            <p>Green (G)</p>
+            <input type="range" name="green" id="green" min="0" max="255" value="0">
+            <input type="text" name="green-box" id="green-box" value="0" readonly>
+        </div>
+        <div>
+            <p>Blue (B)</p>
+            <input type="range" name="blue" id="blue" min="0" max="255" value="0">
+            <input type="text" name="blue-box" id="blue-box" value="0" readonly>
+        </div>
+        <div id="color-box"></div>
+    </div>
+    <script>
+        const r = document.querySelector("#red");
+        const g = document.querySelector("#green");
+        const b = document.querySelector("#blue");
+        let box = document.querySelector("#color-box");
+        let rBox,gBox,bBox;
+
+        r.addEventListener("change", function() {
+            document.querySelector("#red-box").value = r.value;
+            box.style.background = "rgb("+r.value+","+g.value+","+b.value+")";
+        });
+
+        g.addEventListener("change", function() {
+            document.querySelector("#green-box").value = g.value;
+            box.style.background = "rgb("+r.value+","+g.value+","+b.value+")";
+        });
+
+        b.addEventListener("change", function() {
+            document.querySelector("#blue-box").value = b.value;
+            box.style.background = "rgb("+r.value+","+g.value+","+b.value+")";
+        });
+    </script>
+</body>
+</html>
